@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './users/login/login.component';
 import { RegisterComponent } from './users/register/register.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +17,8 @@ import { RegisterComponent } from './users/register/register.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
