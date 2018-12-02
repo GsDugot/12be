@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RegisterComponent } from './users/register/register.component';
-import { LoginComponent } from './users/login/login.component';
-import { ProfileComponent } from './users/profile/profile.component';
-import { HomepageComponent } from './homepage/homepage.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { RegisterComponent } from './components/users/register/register.component';
+import { LoginComponent } from './components/users/login/login.component';
+import { ProfileComponent } from './components/users/profile/profile.component';
 
 const routes: Routes = [
   {path: '', component: HomepageComponent},

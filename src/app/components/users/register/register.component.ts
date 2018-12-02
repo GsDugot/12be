@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { AngularFireAuth } from 'angularfire2/auth';
+import { AuthService } from 'src/app/services/auth.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: "register",
@@ -8,11 +9,10 @@ import { AngularFireAuth } from 'angularfire2/auth';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(public authService: AngularFireAuth) {}
+  constructor(private authService: AuthService) {
+  }
 
   ngOnInit() {
-    //Add click listener to register button
-    document.getElementById("registerbutton").addEventListener("click", this.register);
   }
 
   register() {
@@ -26,10 +26,20 @@ export class RegisterComponent implements OnInit {
     let password_confirmation = (<HTMLInputElement> document.getElementById("password_confirmation")).value;
 
     if(password === password_confirmation){
-      
+      this.authService.registerUser(email,password).then((res)=>{
+        console.log("Registered");
+      }).catch(err => console.log('err',err.message));
     } else{
       alert("Incorrect password");
     }
+    
+    first_name = "";
+    last_name = "";
+    real_user = "";
+    fake_user = "";
+    email = "";
+    password = "";
+    password_confirmation = "";
   }
 
 }

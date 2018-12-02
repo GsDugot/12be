@@ -3,15 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './users/login/login.component';
-import { RegisterComponent } from './users/register/register.component';
+import { LoginComponent } from './components/users/login/login.component';
+import { RegisterComponent } from './components/users/register/register.component';
 
-import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
-import { ProfileComponent } from './users/profile/profile.component';
-import { HomepageComponent } from './homepage/homepage.component';
+import { ProfileComponent } from './components/users/profile/profile.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -27,8 +29,9 @@ import { HomepageComponent } from './homepage/homepage.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    AngularFireStorageModule
   ],
-  providers: [],
+  providers: [AngularFireAuthModule,AngularFirestoreModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
