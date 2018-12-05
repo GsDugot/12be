@@ -15,5 +15,12 @@ export class AuthService {
         err => reject(err));
     });
   }
-
+  doLogin(email,password){
+    return new Promise<any>((resolve, reject) => {
+      this.afsAuth.auth.signInWithEmailAndPassword(email, password)
+      .then(res => {
+        resolve(res);
+      }, err => reject(err))
+    })
+  }
 }

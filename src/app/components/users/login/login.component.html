@@ -7,24 +7,8 @@
          </div>
          <h3 style="text-align: center;"><small><em>Construye tu propia realidad</em></small></h3>
          <hr class="colorgraph">
-         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6">
-               <div class="form-group">
-                  <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="Nombres" tabindex="1">
-               </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-6">
-               <div class="form-group">
-                  <input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Apellidos" tabindex="2">
-               </div>
-            </div>
-         </div>
-         <div class="form-group">
-            <input type="text" name="display_name" id="display_name" class="form-control input-lg" placeholder="Usuario real" tabindex="3">
-         </div>
-         <div class="form-group">
-            <input type="text" name="display_name2" id="display_name2" class="form-control input-lg" placeholder="Usuario falso" tabindex="4">
-         </div>
+        
+        
          <div class="form-group">
             <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email" tabindex="5">
          </div>
@@ -40,12 +24,10 @@
                </div>
             </div>
          </div>
-         <div class="texto">
-            Al presionar <strong class="label label-primary">Registrarse</strong>, aceptas los <a href="#" data-toggle="modal" data-target="#t_and_c_m">terminos y condiciones</a> establecidos por este sitio.
-         </div>
+       
          <hr class="colorgraph">
          <div class="form-group" style="text-align: center;" >
-            <button type="button" class="btn btn-info" style=" width: 250px; height: 40px;" tabindex="7">Registrarse</button>
+            <button (click)="tryLogin()" type="button" class="btn btn-info" style=" width: 250px; height: 40px;" tabindex="7">Iniciar</button>
          </div>
       </form>
    </div>
